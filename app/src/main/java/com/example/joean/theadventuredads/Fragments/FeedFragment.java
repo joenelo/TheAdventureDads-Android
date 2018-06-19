@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -14,14 +15,14 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.joean.theadventuredads.Adapters.FeedAdapter;
-import com.example.joean.theadventuredads.Helpers.Constants;
 import com.example.joean.theadventuredads.Helpers.HorizontalDividerItemDecoration;
 import com.example.joean.theadventuredads.Models.Feed;
 import com.example.joean.theadventuredads.R;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
-import java.util.ArrayList;
 
+import java.util.ArrayList;
 
 public class FeedFragment extends Fragment {
     private ArrayList<Feed> feedItems = new ArrayList<>();
@@ -45,7 +46,6 @@ public class FeedFragment extends Fragment {
     }
 
 
-
     private void initRecyclerView(final View view) {
         mRecyclerView = (RecyclerView) view.findViewById(R.id.feedRecyclerView);
         mRecyclerView.setHasFixedSize(true);
@@ -58,11 +58,11 @@ public class FeedFragment extends Fragment {
         mRecyclerView.setAdapter(mAdapter);
     }
 
-    private void instaAPICall () {
+    private void instaAPICall() {
 
         // Instantiate the RequestQueue
         RequestQueue queue = Volley.newRequestQueue(getActivity());
-        String url = Constants.InstagramAPICallForFeed;
+        String url = "https://api.instagram.com/v1/users/self/media/recent/?access_token=7309771784.8bca4b4.8699a750c408415282a19a5214953605";
         JsonObjectRequest jsObjRequest = new JsonObjectRequest(Request.Method.GET, url, null,
 
                 new Response.Listener<JSONObject>() {
@@ -73,7 +73,7 @@ public class FeedFragment extends Fragment {
                         try {
                             JSONArray dataArray = response.getJSONArray("data");
 
-                            for (int i=0; i<dataArray.length(); i++) {
+                            for (int i = 0; i < dataArray.length(); i++) {
 
                                 JSONObject dataObject = dataArray.getJSONObject(i);
                                 JSONObject images = dataObject.getJSONObject("images");
@@ -93,8 +93,7 @@ public class FeedFragment extends Fragment {
 
                             // Refresh RecyclerView
                             mAdapter.notifyDataSetChanged();
-                        }
-                        catch (Exception e) {
+                        } catch (Exception e) {
                             e.printStackTrace();
                         }
                     }
@@ -112,12 +111,4 @@ public class FeedFragment extends Fragment {
         // queue object was instantiated in pt#3
         queue.add(jsObjRequest);
     }
-
-
-
-
-
-
-
-
 }

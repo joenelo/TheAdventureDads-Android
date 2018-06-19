@@ -6,6 +6,7 @@
 
 
     <LinearLayout
+        android:id="@+id/wrapper"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#ff252e39"
@@ -13,42 +14,42 @@
         android:weightSum="1">
 
 
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginBottom="10dp"
-            android:layout_weight="0.02"
-            android:background="#ff252e39">
+        <!--<FrameLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="50dp"-->
+            <!--android:layout_marginBottom="10dp"-->
+            <!--android:layout_weight="0.02"-->
+            <!--android:background="#ff252e39">-->
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="4dp"
-                android:layout_gravity="top"
-                android:layout_marginTop="55dp"
-                android:background="#182128"/>
+            <!--<View-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="4dp"-->
+                <!--android:layout_gravity="top"-->
+                <!--android:layout_marginTop="55dp"-->
+                <!--android:background="#182128"/>-->
 
-            <com.gigamole.navigationtabstrip.NavigationTabStrip
-                android:id="@+id/navigationBar"
+            <!--<com.gigamole.navigationtabstrip.NavigationTabStrip-->
+                <!--android:id="@+id/navigationBar"-->
 
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_gravity="top"
-                android:layout_marginEnd="30dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:layout_marginStart="30dp"
-                app:nts_active_color="#fff"
-                app:nts_color="#3cdedd"
-                app:nts_corners_radius="3.5dp"
-                app:nts_factor="0.8"
-                app:nts_gravity="bottom"
-                app:nts_inactive_color="#81ffffff"
-                app:nts_titles="@array/titles"
-                app:nts_type="point"
-                app:nts_typeface="fonts/moon.otf"
-                app:nts_weight="7dp"/>
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="60dp"-->
+                <!--android:layout_gravity="top"-->
+                <!--android:layout_marginEnd="30dp"-->
+                <!--android:layout_marginLeft="30dp"-->
+                <!--android:layout_marginRight="30dp"-->
+                <!--android:layout_marginStart="30dp"-->
+                <!--app:nts_active_color="#fff"-->
+                <!--app:nts_color="#3cdedd"-->
+                <!--app:nts_corners_radius="3.5dp"-->
+                <!--app:nts_factor="0.8"-->
+                <!--app:nts_gravity="bottom"-->
+                <!--app:nts_inactive_color="#81ffffff"-->
+                <!--app:nts_titles="@array/titles"-->
+                <!--app:nts_type="point"-->
+                <!--app:nts_typeface="fonts/moon.otf"-->
+                <!--app:nts_weight="7dp"/>-->
 
-        </FrameLayout>
+        <!--</FrameLayout>-->
 
         <FrameLayout
             android:layout_width="match_parent"
@@ -69,7 +70,7 @@
     <com.ashokvarma.bottomnavigation.BottomNavigationBar
         android:id="@+id/bottom_navigation_bar"
         android:layout_width="match_parent"
-        android:layout_height="100px"
+        android:layout_height="80dp"
         android:layout_gravity="bottom"/>
 
 </FrameLayout>

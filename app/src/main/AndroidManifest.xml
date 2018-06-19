@@ -20,12 +20,6 @@
         </activity>
         <activity android:name=".Activities.VIdeoActivity">
         </activity>
-        <activity android:name=".Activities.TripActivity">
-        </activity>
-        <activity android:name=".Activities.PodcastActivity">
-        </activity>
-        <activity android:name=".Activities.MeetupActivity">
-        </activity>
     </application>
 
 </manifest>
