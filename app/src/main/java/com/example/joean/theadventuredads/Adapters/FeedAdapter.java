@@ -1,6 +1,5 @@
 package com.example.joean.theadventuredads.Adapters;
 
-import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -30,7 +29,7 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.ViewHolder> {
 
             feedImage = (ImageView) view.findViewById(R.id.feedImage);
             feedCaption = (TextView) view.findViewById(R.id.feedCaption);
-            feedUsername = (TextView) view.findViewById(R.id.feedUsername);
+            feedUsername = (TextView) view.findViewById(R.id.tripnameText);
         }
     }
 

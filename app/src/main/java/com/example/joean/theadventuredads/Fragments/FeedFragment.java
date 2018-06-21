@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -15,9 +16,9 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.joean.theadventuredads.Adapters.FeedAdapter;
-import com.example.joean.theadventuredads.Helpers.HorizontalDividerItemDecoration;
 import com.example.joean.theadventuredads.Models.Feed;
 import com.example.joean.theadventuredads.R;
+
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -30,9 +31,11 @@ public class FeedFragment extends Fragment {
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
 
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
     }
 
     @Override
@@ -41,6 +44,7 @@ public class FeedFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_feed, container, false);
         instaAPICall();
+
         initRecyclerView(view);
         return view;
     }
@@ -54,7 +58,6 @@ public class FeedFragment extends Fragment {
 
         // specify an adapter (see also next example)
         mAdapter = new FeedAdapter(feedItems);
-        mRecyclerView.addItemDecoration(new HorizontalDividerItemDecoration(getActivity(), LinearLayoutManager.VERTICAL, 20));
         mRecyclerView.setAdapter(mAdapter);
     }
 

@@ -1,15 +1,13 @@
 package com.example.joean.theadventuredads.Models;
 
-/**
- * Created by joean on 2018-06-18.
- */
-
 public class Video {
 
     public String videoID;
+    public String videoTitle;
 
-    public Video(String videoID) {
+    public Video(String videoID, String videoTitle) {
         this.videoID = videoID;
+        this.videoTitle = videoTitle;
 
     }
 }
